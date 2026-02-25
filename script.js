@@ -18,7 +18,7 @@ const contador = setInterval(function() {
 
     if (diferencia < 0) {
         clearInterval(contador);
-        document.getElementById("contador").innerHTML = "¡Ya llegó el gran día!";
+        document.getElementById("contador").innerHTML = "Avui es el gran dia!";
     }
 
 }, 1000);

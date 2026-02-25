@@ -60,6 +60,22 @@ body {
     text-align: center;
 }
 
+/* Boton intolerancias */
+.boton-form {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #c59d5f;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.boton-form:hover {
+    background: #a67c3d;
+}
+
 /* ====== CONTADOR ====== */
 
 /* Color contador background */
