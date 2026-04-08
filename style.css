@@ -5,21 +5,14 @@
     box-sizing: border-box;
 }
 
-/* ===== TIPOGRAFÍAS ===== */
 body {
     font-family: 'Playfair Display', serif;
     scroll-behavior: smooth;
-    color: #333;
+    color: white;
+    padding-top: 70px;
 }
 
-/* Títulos secundarios */
-h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-}
-
-/* ===== MENÚ ===== */
+/* ===== NAVBAR ===== */
 .navbar {
     background: #ffffff;
     padding: 15px 0;
@@ -27,7 +20,7 @@ h2 {
     width: 100%;
     top: 0;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    z-index: 10;
+    z-index: 1000;
 }
 
 .navbar ul {
@@ -44,7 +37,6 @@ h2 {
     text-decoration: none;
     color: #333;
     font-weight: 500;
-    font-family: 'Playfair Display', serif;
     transition: 0.3s;
 }
 
@@ -52,7 +44,7 @@ h2 {
     color: #c59d5f;
 }
 
-/* ===== HERO VIDEO ===== */
+/* ===== HERO ===== */
 .hero {
     position: relative;
     height: 100vh;
@@ -61,64 +53,47 @@ h2 {
 
 .video-bg {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    z-index: 0;
 }
 
-/* Overlay oscuro */
 .hero::after {
     content: "";
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.3);
-    top: 0;
-    left: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 1;
 }
 
 .hero-text {
     position: relative;
     z-index: 2;
-    color: white;
     text-align: center;
     top: 50%;
     transform: translateY(-50%);
 }
 
-/* NOMBRES */
-.hero-text h1 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 5rem;
-    letter-spacing: 2px;
-}
-
-.hero-text p {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    margin-top: 10px;
-}
-
-/* ===== SECCIONES ===== */
+/* ===== SECCIONES GENERALES ===== */
 .seccion {
+    min-height: 100vh;
     padding: 80px 20px;
-    text-align: center;
-    max-width: 900px;
-    margin: auto;
-    position: relative;
-    z-index: 2;
-}
 
-/* Sección con video */
-.video-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
     position: relative;
-    min-height: 600px; /* Asegura que el video se vea bien */
-    overflow: hidden;
-    color: white;
 }
 
 /* Overlay oscuro */
-.video-section::after {
+.seccion::after {
     content: "";
     position: absolute;
     width: 100%;
@@ -129,104 +104,194 @@ h2 {
     z-index: 1;
 }
 
-/* Contenido encima */
-.video-section .contenido {
+.seccion * {
     position: relative;
     z-index: 2;
-    padding: 40px 20px;
 }
 
-/* Ajuste del video SOLO para secciones */
-.video-section .video-bg {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+/* ===== FONDOS POR SECCIÓN ===== */
+
+/* ===== GALERÍA ===== */
+.galeria-imagen {
+    width: 100%;           /* Ocupa todo el ancho del contenedor */
+    max-width: 1200px;     /* Máximo ancho si quieres limitarlo */
+    margin: auto;          /* Centrado horizontal */
+    overflow: hidden;      /* Recorta si es necesario */
 }
 
-/* Texto dentro de secciones */
-.seccion p {
-    margin-bottom: 15px;
-    line-height: 1.6;
-}
-
-/* ===== BOTÓN ===== */
-.boton-form {
-    display: inline-block;
-    padding: 15px 30px;
-    background: #c59d5f;
-    color: white;
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: bold;
-    margin-top: 20px;
-    transition: 0.3s;
-}
-
-.boton-form:hover {
-    background: #a67c3d;
-}
-
-/* ===== CONTADOR ===== */
-.contador-section {
-    background: #862a72;
-    padding: 80px 20px;
-    text-align: center;
-    color: white;
-}
-
-#contador {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 20px;
-}
-
-#contador div {
-    background: rgb(184, 89, 187);
-    padding: 20px;
-    border-radius: 10px;
-    min-width: 80px;
-}
-
-#contador span {
-    font-size: 2rem;
-    font-weight: bold;
+.galeria-imagen img {
+    width: 100%;           /* Ajusta al ancho del contenedor */
+    height: auto;          /* Mantiene la proporción */
+    object-fit: cover;     /* Recorta lo que sobra de forma elegante */
     display: block;
+    border-radius: 10px;   /* Opcional: bordes redondeados */
 }
 
-/* Sección con imagen de fondo */
-.image-section {
-    position: relative;
-    min-height: 600px; /* altura mínima */
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 80px 20px;
-    z-index: 1;
-    background-image: url('images/historia.jpg'); /* Cambia la ruta por tu imagen */
+
+
+.bg-localizacion {
+    background-image: url("images/localizacion.jpg");
+}
+
+.bg-confirmacion {
+    background-image: url("images/confirmacion.jpg");
+}
+
+.bg-vestimenta {
+    background-image: url("images/vestimenta.jpg");
+}
+
+.bg-preguntas {
+    background-image: url("images/preguntas.jpg");
+}
+
+.bg-galeria,
+.bg-horarios,
+.bg-localizacion,
+.bg-confirmacion,
+.bg-vestimenta,
+.bg-preguntas {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-/* Overlay oscuro para que el texto se lea mejor */
-.image-section::after {
+/* ===== HISTORIA (NUEVO DISEÑO) ===== */
+.historia-section {
+    background: white;
+    color: #333;
+    padding: 100px 20px;
+}
+
+.historia-section-inner {
+    display: flex;
+    align-items: flex-start; /* Alinea la imagen y el texto arriba */
+    gap: 40px; /* Espacio entre texto e imagen */
+    flex-wrap: wrap; /* Permite que en pantallas pequeñas se vaya a vertical */
+}
+
+/* Contenedor del título y la imagen */
+.historia-header {
+    display: flex;
+    align-items: center;      /* Centra verticalmente imagen y título */
+    justify-content: center;  /* Centra todo horizontalmente en la sección */
+    gap: 20px;                /* Espacio entre título e imagen */
+    margin-bottom: 40px;      /* Separación del texto de abajo */
+}
+
+/* Imagen más pequeña */
+.historia-img img {
+    width: 300px;     /* Tamaño pequeño */
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Título elegante */
+.historia-titulo {
+    font-family: 'Great Vibes', cursive;
+    font-size: 5rem;
+    margin: 0; /* Quita margen extra del h2 */
+}
+
+/* Texto centrado debajo */
+.historia-texto {
+    text-align: center;  /* Todo el texto centrado horizontalmente */
+    max-width: 800px;    /* Limita el ancho para que no quede muy largo */
+    margin: auto;        /* Centrado del bloque */
+    line-height: 1.7;
+}
+
+/* Contenido */
+.historia-contenido {
+    max-width: 800px;
+    margin: auto;
+    text-align: left;
+}
+
+/* Título elegante */
+.historia-titulo {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    margin-bottom: 30px;
+}
+
+/* Texto */
+.historia-contenido p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+/* Subtítulo */
+.historia-contenido h3 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+/* ===== CONTADOR CON VIDEO ===== */
+.contador-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Video */
+.contador-section .video-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* Overlay */
+.contador-section::after {
     content: "";
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
     background: rgba(0,0,0,0.5);
     z-index: 1;
 }
 
-/* Contenido encima */
-.image-section .contenido {
+/* Contenido */
+.contador-section .contenido {
     position: relative;
     z-index: 2;
-    max-width: 900px;
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contador */
+#contador {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+#contador div {
+    background: rgba(0,0,0,0.4);
+    padding: 30px 40px;
+    border-radius: 15px;
+    min-width: 120px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+#contador span {
+    font-size: 4rem;
+    font-weight: bold;
+    display: block;
+    text-shadow: 0 5px 20px rgba(0,0,0,0.8);
+}
+
+#contador p {
+    margin-top: 10px;
+    font-size: 1.2rem;
 }

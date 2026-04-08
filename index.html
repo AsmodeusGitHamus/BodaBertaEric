@@ -16,12 +16,10 @@
         <ul>
             <li><a href="#inicio">Inici</a></li>
             <li><a href="#historia">La nostra història</a></li>
-            <li><a href="#galeria">Galeria</a></li>
             <li><a href="#horarios">Horaris</a></li>
             <li><a href="#localizacion">Localització</a></li>
             <li><a href="#confirmacion">Confirmació</a></li>
             <li><a href="#vestimenta">Codi de vestimenta</a></li>
-            <li><a href="#contador">Compte enrere</a></li>
             <li><a href="#preguntas">Preguntes</a></li>
         </ul>
     </nav>
@@ -35,61 +33,66 @@
 
     <div class="hero-text">
         <h1>Berta & Eric</h1>
-        <p>Ens casem!</p>
+        <p>Nos casamos!</p>
     </div>
 </section>
 
-<!-- ====== HISTÒRIA ====== -->
-<section id="historia" class="seccion image-section">
+<!-- ====== CONTADOR ====== -->
+<section class="contador-section video-section">
+
+    <!-- VIDEO DE FONDO -->
+    <video autoplay muted loop class="video-bg">
+        <source src="video/rosas.mp4" type="video/mp4">
+    </video>
 
     <!-- CONTENIDO -->
     <div class="contenido">
-        <h2>La nostra història</h2>
+        <h2>Cuenta atrás</h2>
 
-        <p>
-        Existeixen formes curioses de fer que dos camins es creuin… I el nostre va començar, literalment, per una casualitat.
-        Un simple error a l’hora d’escollir on fer les pràctiques la va portar al lloc de feina d’ell.
-        </p>
-
-        <p>
-        El que va començar com converses sense més, es va anar convertint en complicitat… I d’aquí, en alguna cosa impossible d’ignorar.
-        Així va començar el nostre camí.
-        </p>
-
-        <p>
-        Des de llavors, hem crescut junts en tots els sentits. Ens vam independitzar, vam formar una llar i vam començar a crear la nostra pròpia família.
-        </p>
-
-        <p>
-        També hem tingut moments complicats, però amb esforç, paciència i molt amor, ens vam tornar a trobar més forts.
-        </p>
-
-        <p><b>Perquè escollir-nos mai ha estat una casualitat.</b></p>
-
-        <h3>LA PEDIDA</h3>
-
-        <p>
-        Després de 8 anys (sí, 8 anys 😅), va arribar el moment.
-        Ella esperava la pedida al Marroc… però ell tenia altres plans.
-        </p>
-
-        <p>
-        A les 4 de la matinada, a casa, sense esperar-ho… va arribar el “sí”.
-        I aquí estem avui, preparats per celebrar-ho amb tots vosaltres.
-        </p>
+        <div id="contador">
+            <div><span id="dias">00</span><p>Días</p></div>
+            <div><span id="horas">00</span><p>Horas</p></div>
+            <div><span id="minutos">00</span><p>Minutos</p></div>
+        </div>
     </div>
+
+</section>
+
+<!-- ====== HISTORIA ====== -->
+<section id="historia" class="historia-section">
+
+    <!-- Título e imagen en la misma línea -->
+    <div class="historia-header">
+        <h3 class="historia-titulo">Nuestra historia</h3>
+        <div class="historia-img">
+            <img src="images/9.jpg" alt="Nuestra historia">
+        </div>
+    </div>
+
+    <!-- Texto centrado debajo -->
+    <div class="historia-texto">
+        <p>Existen formas curiosas de hacer que dos caminos se crucen… Y el nuestro empezó, literalmente, por una casualidad.</p>
+        <p>Un simple error al escoger dónde realizar las prácticas, la llevó a ella al lugar de trabajo de él. En aquel momento, nuestras vidas iban por caminos distintos, pero poco a poco y casi sin darnos cuenta, empezamos a coincidir. Entre horarios, pasillos y trayectos en tren, el roce fue haciendo su magia. Lo que empezó como conversaciones sin más, se fue convirtiendo en complicidad… Y de ahí, en algo imposible de ignorar.</p>
+        <p>Así comenzó lo nuestro.</p>
+        <p>Desde entonces, hemos crecido juntos en todos los sentidos. Hemos construido una relación con ganas de compartir la vida. Nos independizamos, formamos un hogar y empezamos a crear nuestra propia familia.</p>
+        <p>Pero no todo ha sido fácil, y tampoco queremos hacer ver que lo es. Como cualquier pareja, hemos tenido momentos complicados y etapas en las que no nos entendíamos. Pero si algo teníamos claro, es que queríamos estar juntos. Y con esfuerzo, paciencia y mucho amor, volvimos a encontrarnos de una forma más fuerte y consciente. O lo que es lo mismo, podemos confirmar que sobrevivimos a la convivencia, que ya es mucho decir!!!</p>
+        <p><b>Porque elegirnos nunca ha sido casualidad.</b></p>
+    </div>
+
 </section>
 
 <!-- ====== GALERIA ====== -->
 <section id="galeria" class="seccion">
-    <h2>Galeria</h2>
-    <p>Fotos nostres</p>
+    <div class="galeria-imagen">
+        <img src="images/tres.jpg" alt="Nuestra galería">
+    </div>
 </section>
 
-<!-- ====== HORARIS ====== -->
+<!-- ====== HORARIOS ====== -->
 <section id="horarios" class="seccion">
-    <h2>Horaris</h2>
-    <p>Cerimònia, còctel, sopar i festa (afegir horaris aquí)</p>
+    <div class="horarios-imagen">
+        <img src="images/horarios.png" alt="Horarios">
+    </div>
 </section>
 
 <!-- ====== LOCALITZACIÓ ====== -->
@@ -112,16 +115,7 @@
     <p>Formal — esperem veure-us elegants, ja que és un dia especial ✨</p>
 </section>
 
-<!-- ====== COMPTE ENRERE ====== -->
-<section class="contador-section">
-    <h2>Compte enrere</h2>
-    <div id="contador">
-        <div><span id="dias">00</span><p>Dies</p></div>
-        <div><span id="horas">00</span><p>Hores</p></div>
-        <div><span id="minutos">00</span><p>Minuts</p></div>
-        <div><span id="segundos">00</span><p>Segons</p></div>
-    </div>
-</section>
+
 
 <!-- ====== PREGUNTES ====== -->
 <section id="preguntas" class="seccion">
