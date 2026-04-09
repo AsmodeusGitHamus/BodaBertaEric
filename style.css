@@ -17,6 +17,23 @@ body {
 }
 
 /* ===== NAVBAR ===== */
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+    padding-top: 70px;
+}
+
+/* ===== NAVBAR ===== */
 .navbar {
     background: #ffffff;
     padding: 15px 0;
@@ -27,6 +44,7 @@ body {
     z-index: 1000;
 }
 
+/* MENÚ NORMAL (ESCRITORIO) */
 .navbar ul {
     display: flex;
     justify-content: center;
@@ -40,12 +58,47 @@ body {
 .navbar a {
     text-decoration: none;
     color: #333;
-    font-weight: 500;
-    transition: 0.3s;
 }
 
-.navbar a:hover {
-    color: #c59d5f;
+/* BOTÓN HAMBURGUESA */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #333;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+}
+
+/* ===== MÓVIL ===== */
+@media (max-width: 768px) {
+
+    /* MOSTRAR BOTÓN */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* OCULTAR MENÚ */
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        background: white;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* CUANDO SE ABRE */
+    .navbar ul.active {
+        display: flex;
+    }
+
+    .navbar li {
+        margin: 15px 0;
+    }
 }
 
 /* ===== HERO ===== */
