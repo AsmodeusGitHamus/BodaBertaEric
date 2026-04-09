@@ -380,3 +380,85 @@ img {
         margin: 15px 0;
     }
 }
+
+/* ===== BOTÓN HERO ===== */
+.btn-confirmar {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: #ffffff;
+    color: #333;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.btn-confirmar:hover {
+    background: #333;
+    color: white;
+}
+
+/* ===== GRID FOTOS ===== */
+.grid-fotos {
+    padding: 60px 20px;
+    background: #ffffff; /* 👈 fondo blanco */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.grid-container img {
+    width: 100%;
+    height: auto; /* 👈 clave */
+    object-fit: contain; /* 👈 muestra la imagen completa */
+    border-radius: 10px;
+    background: #f5f5f5; /* opcional: relleno si hay huecos */
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-container img {
+        height: 200px;
+    }
+}
+
+/* ===== MENÚ EN PC ===== */
+@media (min-width: 769px) {
+
+    .menu-toggle {
+        display: none; /* oculta hamburguesa */
+    }
+
+    .navbar ul {
+        display: flex !important; /* muestra menú */
+        flex-direction: row;
+        justify-content: center;
+        position: static;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .navbar li {
+        margin: 0 15px;
+    }
+}
+
+/* ===== GALERÍA FONDO BLANCO ===== */
+.galeria-blanca {
+    background: #ffffff;
+    color: #333;
+}
+
+.galeria-blanca::after {
+    background: none; /* elimina el overlay oscuro */
+}
