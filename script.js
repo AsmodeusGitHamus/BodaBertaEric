@@ -1,6 +1,11 @@
 // ===== FECHA DE LA BODA =====
 const fechaBoda = new Date("2026-10-11T17:00:00").getTime();
+const toggle = document.getElementById("menu-toggle");
+const menu = document.getElementById("menu");
 
+toggle.addEventListener("click", () => {
+    menu.classList.toggle("active");
+});
 const contador = setInterval(function() {
 
     const ahora = new Date().getTime();
