@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+html, body {
+    overflow-x: hidden; /* 🔥 SOLUCIONA EL SCROLL LATERAL */
+}
+
 body {
     font-family: 'Playfair Display', serif;
     scroll-behavior: smooth;
@@ -92,7 +96,6 @@ body {
     position: relative;
 }
 
-/* Overlay oscuro */
 .seccion::after {
     content: "";
     position: absolute;
@@ -109,26 +112,35 @@ body {
     z-index: 2;
 }
 
-/* ===== FONDOS POR SECCIÓN ===== */
-
 /* ===== GALERÍA ===== */
 .galeria-imagen {
-    width: 100%;           /* Ocupa todo el ancho del contenedor */
-    max-width: 1200px;     /* Máximo ancho si quieres limitarlo */
-    margin: auto;          /* Centrado horizontal */
-    overflow: hidden;      /* Recorta si es necesario */
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
 }
 
 .galeria-imagen img {
-    width: 100%;           /* Ajusta al ancho del contenedor */
-    height: auto;          /* Mantiene la proporción */
-    object-fit: cover;     /* Recorta lo que sobra de forma elegante */
+    width: 100%;
+    height: auto;
+    object-fit: cover;
     display: block;
-    border-radius: 10px;   /* Opcional: bordes redondeados */
+    border-radius: 10px;
 }
 
+/* ===== MAPA RESPONSIVE ===== */
+.mapa {
+    width: 100%;
+    max-width: 1000px;
+}
 
+.mapa iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+}
 
+/* ===== FONDOS ===== */
 .bg-localizacion {
     background-image: url("images/localizacion.jpg");
 }
@@ -156,88 +168,49 @@ body {
     background-repeat: no-repeat;
 }
 
-/* ===== HISTORIA (NUEVO DISEÑO) ===== */
+/* ===== HISTORIA ===== */
 .historia-section {
     background: white;
     color: #333;
     padding: 100px 20px;
 }
 
-.historia-section-inner {
-    display: flex;
-    align-items: flex-start; /* Alinea la imagen y el texto arriba */
-    gap: 40px; /* Espacio entre texto e imagen */
-    flex-wrap: wrap; /* Permite que en pantallas pequeñas se vaya a vertical */
-}
-
-/* Contenedor del título y la imagen */
 .historia-header {
     display: flex;
-    align-items: center;      /* Centra verticalmente imagen y título */
-    justify-content: center;  /* Centra todo horizontalmente en la sección */
-    gap: 20px;                /* Espacio entre título e imagen */
-    margin-bottom: 40px;      /* Separación del texto de abajo */
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
 }
 
-/* Imagen más pequeña */
 .historia-img img {
-    width: 300px;     /* Tamaño pequeño */
+    width: 300px;
     height: auto;
     border-radius: 20px;
     object-fit: cover;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
-/* Título elegante */
 .historia-titulo {
     font-family: 'Great Vibes', cursive;
     font-size: 5rem;
-    margin: 0; /* Quita margen extra del h2 */
+    margin: 0;
 }
 
-/* Texto centrado debajo */
 .historia-texto {
-    text-align: center;  /* Todo el texto centrado horizontalmente */
-    max-width: 800px;    /* Limita el ancho para que no quede muy largo */
-    margin: auto;        /* Centrado del bloque */
-    line-height: 1.7;
-}
-
-/* Contenido */
-.historia-contenido {
+    text-align: center;
     max-width: 800px;
     margin: auto;
-    text-align: left;
-}
-
-/* Título elegante */
-.historia-titulo {
-    font-family: 'Great Vibes', cursive;
-    font-size: 3rem;
-    margin-bottom: 30px;
-}
-
-/* Texto */
-.historia-contenido p {
-    margin-bottom: 15px;
     line-height: 1.7;
 }
 
-/* Subtítulo */
-.historia-contenido h3 {
-    margin-top: 30px;
-    margin-bottom: 15px;
-    font-size: 1.5rem;
-}
-
-/* ===== CONTADOR CON VIDEO ===== */
+/* ===== CONTADOR ===== */
 .contador-section {
     position: relative;
     height: 100vh;
     overflow: hidden;
 }
 
-/* Video */
 .contador-section .video-bg {
     position: absolute;
     width: 100%;
@@ -246,7 +219,6 @@ body {
     z-index: 0;
 }
 
-/* Overlay */
 .contador-section::after {
     content: "";
     position: absolute;
@@ -256,7 +228,6 @@ body {
     z-index: 1;
 }
 
-/* Contenido */
 .contador-section .contenido {
     position: relative;
     z-index: 2;
@@ -268,18 +239,20 @@ body {
     align-items: center;
 }
 
-/* Contador */
+/* CONTADOR FLEXIBLE */
 #contador {
     display: flex;
     gap: 40px;
     margin-top: 30px;
+    flex-wrap: wrap; /* 🔥 CLAVE PARA MÓVIL */
+    justify-content: center;
 }
 
 #contador div {
     background: rgba(0,0,0,0.4);
     padding: 30px 40px;
     border-radius: 15px;
-    min-width: 120px;
+    min-width: 100px;
     backdrop-filter: blur(5px);
     box-shadow: 0 5px 20px rgba(0,0,0,0.3);
 }
@@ -294,4 +267,61 @@ body {
 #contador p {
     margin-top: 10px;
     font-size: 1.2rem;
+}
+
+/* ===== IMÁGENES ===== */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+
+    .navbar ul {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .navbar li {
+        margin: 5px 10px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-text p {
+        font-size: 1.2rem;
+    }
+
+    .historia-header {
+        flex-direction: column;
+    }
+
+    .historia-img img {
+        width: 200px;
+    }
+
+    .historia-titulo {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    #contador {
+        gap: 15px;
+    }
+
+    #contador div {
+        padding: 20px;
+        min-width: 80px;
+    }
+
+    #contador span {
+        font-size: 2.5rem;
+    }
+
+    .seccion {
+        padding: 60px 15px;
+    }
 }
