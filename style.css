@@ -409,16 +409,15 @@ img {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
-    max-width: 900px;
+    max-width: 600px;
     margin: auto;
 }
 
 .grid-container img {
     width: 100%;
-    height: auto; /* 👈 clave */
-    object-fit: contain; /* 👈 muestra la imagen completa */
+    max-height: 200px;
+    object-fit: contain;
     border-radius: 10px;
-    background: #f5f5f5; /* opcional: relleno si hay huecos */
 }
 
 /* ===== RESPONSIVE ===== */
@@ -461,4 +460,37 @@ img {
 
 .galeria-blanca::after {
     background: none; /* elimina el overlay oscuro */
+}
+
+/* ===== TODAS LAS IMÁGENES CONTROLADAS ===== */
+img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: block;
+}
+
+/* Limita tamaño general para que no sean gigantes */
+.seccion img,
+.historia-section img {
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+/* ===== EXCEPCIÓN HORARIOS ===== */
+#horarios {
+    padding: 0;
+}
+
+#horarios .horarios-imagen {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#horarios .horarios-imagen img {
+    width: 100%;
+    height: auto;        /* 👈 clave */
+    max-width: none;     /* 👈 rompe límites */
+    object-fit: contain; /* 👈 NO recorta */
 }
