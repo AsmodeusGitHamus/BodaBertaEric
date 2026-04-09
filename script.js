@@ -1,29 +1,40 @@
-// ===== FECHA DE LA BODA =====
-const fechaBoda = new Date("2026-10-11T17:00:00").getTime();
-const toggle = document.getElementById("menu-toggle");
-const menu = document.getElementById("menu");
+document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".navbar ul");
 
-toggle.addEventListener("click", () => {
-    menu.classList.toggle("active");
+    menuToggle.addEventListener("click", () => {
+        menu.classList.toggle("active");
+    });
+
+    const links = document.querySelectorAll(".navbar ul li a");
+    links.forEach(link => {
+        link.addEventListener("click", () => {
+            menu.classList.remove("active");
+        });
+    });
 });
-const contador = setInterval(function() {
 
-    const ahora = new Date().getTime();
-    const diferencia = fechaBoda - ahora;
+    // ===== CONTADOR =====
+    const fechaBoda = new Date("2026-10-11T17:00:00").getTime();
 
-    const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-    const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
-    const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+    const contador = setInterval(() => {
 
-    document.getElementById("dias").innerHTML = dias;
-    document.getElementById("horas").innerHTML = horas;
-    document.getElementById("minutos").innerHTML = minutos;
-    document.getElementById("segundos").innerHTML = segundos;
+        const ahora = new Date().getTime();
+        const diferencia = fechaBoda - ahora;
 
-    if (diferencia < 0) {
-        clearInterval(contador);
-        document.getElementById("contador").innerHTML = "Avui es el gran dia!";
-    }
+        const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+        const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
 
-}, 1000);
+        document.getElementById("dias").innerHTML = dias;
+        document.getElementById("horas").innerHTML = horas;
+        document.getElementById("minutos").innerHTML = minutos;
+
+        if (diferencia < 0) {
+            clearInterval(contador);
+            document.getElementById("contador").innerHTML = "Avui es el gran dia!";
+        }
+
+    }, 1000);
+
+;

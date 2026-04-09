@@ -16,103 +16,43 @@ body {
     padding-top: 70px;
 }
 
-/* ===== NAVBAR ===== */
-/* ===== RESET ===== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html, body {
-    overflow-x: hidden;
-}
-
-body {
-    font-family: 'Playfair Display', serif;
-    padding-top: 70px;
-}
-
-/* ===== NAVBAR ===== */
-.navbar {
-    background: #ffffff;
-    padding: 15px 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    z-index: 1000;
-}
-
-/* ===== NAVBAR ===== */
-.navbar {
-    background: #ffffff;
-    padding: 15px 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    z-index: 1000;
-}
-
-/* MENÚ NORMAL (PC) */
-.navbar ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-}
-
-.navbar li {
-    margin: 0 20px;
-}
-
-.navbar a {
-    text-decoration: none;
-    color: #333;
-}
-
-/* BOTÓN HAMBURGUESA (oculto en PC) */
+/* ===== BOTÓN HAMBURGUESA (SIEMPRE VISIBLE) ===== */
 .menu-toggle {
-    display: none;
     font-size: 2rem;
     cursor: pointer;
     color: #333;
     position: absolute;
     right: 20px;
-    top: 15px;
+    top: 10px;
 }
 
-/* ===== MÓVIL ===== */
-@media (max-width: 768px) {
-
-    /* Mostrar botón */
-    .menu-toggle {
-        display: block;
-    }
-
-    /* Ocultar menú por defecto */
-    .navbar ul {
-        display: none;
-        flex-direction: column;
-        background: white;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        text-align: center;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-
-    /* Mostrar menú al hacer click */
-    .navbar ul.active {
-        display: flex;
-    }
-
-    .navbar li {
-        margin: 15px 0;
-    }
+/* ===== MENÚ OCULTO ===== */
+.navbar ul {
+    display: none;
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
+/* ===== MENÚ ACTIVO ===== */
+.navbar ul.active {
+    display: flex;
+}
+
+.navbar li {
+    margin: 15px 0;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2rem;
+}
 
 /* ===== HERO ===== */
 .hero {
@@ -392,39 +332,45 @@ img {
     }
 }
 
-/* ===== BOTÓN HAMBURGUESA ===== */
+/* ===== BOTÓN HAMBURGUESA (SIEMPRE VISIBLE) ===== */
 .menu-toggle {
-    display: none;
     font-size: 2rem;
     cursor: pointer;
     color: #333;
     position: absolute;
     right: 20px;
-    top: 15px;
+    top: 10px;
+    z-index: 1000; /* 🔥 encima de todo */
 }
-
 /* ===== MÓVIL ===== */
 @media (max-width: 768px) {
 
-    .menu-toggle {
-        display: block;
+    .navbar {
+        position: relative;
+        padding: 15px;
+        z-index: 1000;
     }
 
-    .navbar {
-        padding: 15px;
+    .menu-toggle {
+        z-index: 1000;
     }
 
     .navbar ul {
-        display: none; /* oculto por defecto */
-        flex-direction: column;
-        background: white;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        text-align: center;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        z-index: 999;
     }
+
+    .navbar ul {
+    display: none;
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    z-index: 999; /* 🔥 importante */
+}
 
     .navbar ul.active {
         display: flex; /* se muestra al abrir */
