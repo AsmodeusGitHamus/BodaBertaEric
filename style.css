@@ -44,7 +44,18 @@ body {
     z-index: 1000;
 }
 
-/* MENÚ NORMAL (ESCRITORIO) */
+/* ===== NAVBAR ===== */
+.navbar {
+    background: #ffffff;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+/* MENÚ NORMAL (PC) */
 .navbar ul {
     display: flex;
     justify-content: center;
@@ -60,7 +71,7 @@ body {
     color: #333;
 }
 
-/* BOTÓN HAMBURGUESA */
+/* BOTÓN HAMBURGUESA (oculto en PC) */
 .menu-toggle {
     display: none;
     font-size: 2rem;
@@ -74,12 +85,12 @@ body {
 /* ===== MÓVIL ===== */
 @media (max-width: 768px) {
 
-    /* MOSTRAR BOTÓN */
+    /* Mostrar botón */
     .menu-toggle {
         display: block;
     }
 
-    /* OCULTAR MENÚ */
+    /* Ocultar menú por defecto */
     .navbar ul {
         display: none;
         flex-direction: column;
@@ -89,9 +100,10 @@ body {
         left: 0;
         width: 100%;
         text-align: center;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
 
-    /* CUANDO SE ABRE */
+    /* Mostrar menú al hacer click */
     .navbar ul.active {
         display: flex;
     }
@@ -100,6 +112,7 @@ body {
         margin: 15px 0;
     }
 }
+
 
 /* ===== HERO ===== */
 .hero {
